@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>ShipContext local SHIP-42 preview</title>
+  <style>
+    @font-face {
+      font-family: Inter;
+      src: url("file:///usr/share/fonts/truetype/sand-box/google/Inter/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+      font-weight: 100 900;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 1280px;
+      height: 720px;
+      overflow: hidden;
+      font-family: Inter, "Noto Sans", system-ui, sans-serif;
+      background: #0d1117;
+      color: #172b4d;
+    }
+    .frame {
+      width: 1280px;
+      height: 720px;
+      display: flex;
+      flex-direction: column;
+      background: #f7f8f9;
+    }
+    .topbar {
+      height: 48px;
+      background: #1d2125;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      font-size: 14px;
+      letter-spacing: 0.01em;
+    }
+    .topbar strong { font-weight: 650; }
+    .badge {
+      background: #e56910;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 3px;
+      letter-spacing: 0.04em;
+    }
+    .body {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 0;
+      min-height: 0;
+    }
+    .issue {
+      padding: 28px 32px 16px;
+      border-right: 1px solid #dcdfe4;
+      background: #fff;
+    }
+    .kicker { color: #626f86; font-size: 13px; margin-bottom: 8px; }
+    h1 { margin: 0 0 12px; font-size: 28px; font-weight: 650; line-height: 1.2; }
+    .meta { display: flex; gap: 10px; align-items: center; margin-bottom: 20px; }
+    .loz {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 3px;
+      text-transform: uppercase;
+    }
+    .loz.inprogress { background: #cce0ff; color: #09326c; }
+    .loz.wait { background: #ffd5d2; color: #5d1f1a; }
+    .loz.kind { background: #f1f2f4; color: #44546f; }
+    .issue p, .panel p { margin: 0 0 10px; font-size: 15px; line-height: 1.45; }
+    .muted { color: #626f86; font-size: 13px; }
+    .panel {
+      padding: 24px 24px 12px;
+      background: #f7f8f9;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .panel h2 { margin: 0; font-size: 20px; }
+    .banner {
+      border-radius: 8px;
+      padding: 12px 14px;
+      background: #fff7d6;
+      border-left: 4px solid #e2b203;
+    }
+    .banner.highlight { outline: 3px solid #0c66e4; outline-offset: 2px; }
+    .banner h3 { margin: 0 0 6px; font-size: 15px; }
+    .section { background: #fff; border: 1px solid #dcdfe4; border-radius: 8px; padding: 12px 14px; }
+    .section.highlight { outline: 3px solid #0c66e4; outline-offset: 2px; }
+    .section h3 { margin: 0 0 8px; font-size: 14px; }
+    .section .item { margin-bottom: 8px; }
+    .section .item:last-child { margin-bottom: 0; }
+    .caption {
+      height: 88px;
+      background: #1d2125;
+      color: #fff;
+      padding: 14px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 4px;
+    }
+    .caption .label { color: #8c9cb8; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; }
+    .caption .line { font-size: 20px; font-weight: 550; line-height: 1.3; }
+    .title-only, .end-only {
+      width: 1280px;
+      height: 720px;
+      background: #0b1f33;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 100px;
+    }
+    .title-only h1, .end-only h1 { color: #fff; font-size: 52px; margin-bottom: 16px; }
+    .title-only p, .end-only p { color: #d0d7de; font-size: 22px; line-height: 1.45; max-width: 900px; }
+    .title-only .note, .end-only .note { margin-top: 28px; color: #e56910; font-weight: 650; font-size: 16px; }
+    body[data-scene="title"] .frame,
+    body[data-scene="end"] .frame { display: none; }
+    body[data-scene="title"] .title-only { display: flex; }
+    body[data-scene="end"] .end-only { display: flex; }
+    .title-only, .end-only { display: none; }
+  </style>
+</head>
+<body data-scene="panel">
+  <div class="title-only">
+    <p class="kicker" style="color:#8c9cb8;font-size:16px;">Codegeist 2026 · Apps for Software Teams</p>
+    <h1>ShipContext</h1>
+    <p>A Forge issue-context panel that answers a short question for software teams: can we ship this, or should we wait?</p>
+    <p class="note">Local SHIP-42 preview — not a recording of the live Jira install.</p>
+  </div>
+  <div class="end-only">
+    <h1>Wait, then ship with confidence.</h1>
+    <p>This walkthrough uses the canned SHIP-42 demo data from the app. It is a local preview, not the official contest video. The live official recording already exists locally as shipcontext-live-demo.mp4 (4 minutes 50 seconds). It is not yet on YouTube.</p>
+    <p class="note">Formally Joined on Devpost as nlewisbyt. Not Submitted.</p>
+  </div>
+  <div class="frame">
+    <div class="topbar">
+      <div><strong>ShipContext</strong> · Jira issue-context preview</div>
+      <div class="badge">Local demo · not live Jira footage</div>
+    </div>
+    <div class="body">
+      <div class="issue">
+        <div class="kicker">SHIP · Story · SHIP-42</div>
+        <h1>Release billing v2.4 to production</h1>
+        <div class="meta">
+          <span class="loz inprogress">In Review</span>
+          <span class="muted">Assignee: Priya Shah · Reporter: Alex Chen</span>
+        </div>
+        <p>Software teams usually piece this together by hand: the go-live decision lives in Confluence, ownership is on the issue, and blockers are buried in sub-tasks and CI.</p>
+        <p class="muted">The panel on the right is the same view model the Forge app shows for the canned Demo scenario.</p>
+      </div>
+      <div class="panel">
+        <h2>ShipContext</h2>
+        <div class="banner" id="rec">
+          <h3>Recommendation: Wait</h3>
+          <p>CI checks on pull request #184 (billing-v2-release) failed.</p>
+          <p><strong>Next step:</strong> Fix the failing check on the linked pull request, then re-run CI.</p>
+        </div>
+        <div class="section" id="decided">
+          <h3>What's decided</h3>
+          <div class="item">Go live on 20 Nov only if checkout regression tests are green.<div class="muted">Confluence: v2.4 go-live decision</div></div>
+          <div class="item">Feature flag billing-v2 remains off for 10% of traffic until 24 hours after deploy.<div class="muted">Comment by Alex Chen</div></div>
+        </div>
+        <div class="section" id="owners">
+          <h3>Who is responsible</h3>
+          <p>Assignee: Priya Shah<br>Reporter: Alex Chen</p>
+        </div>
+        <div class="section" id="blockers">
+          <h3>Blockers</h3>
+          <p><span class="loz wait">check</span> CI checks on pull request #184 (billing-v2-release) failed</p>
+          <p><span class="loz kind">subtask</span> SHIP-55 Verify webhook retries is still unresolved</p>
+        </div>
+      </div>
+    </div>
+    <div class="caption">
+      <div class="label" id="cap-label">Preview</div>
+      <div class="line" id="cap-line"></div>
+    </div>
+  </div>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const scene = params.get("scene") || "title";
+    const captions = {
+      title: ["", ""],
+      problem: ["The problem", "Release context is scattered across comments, docs, PRs, and failed checks."],
+      rec: ["The recommendation", "For SHIP-42, ShipContext says Wait, and gives one next step."],
+      decided: ["What's decided", "Decisions are quoted with their source, including a linked Confluence page."],
+      owners: ["Who is responsible", "The panel shows the assignee and reporter instead of making you hunt for them."],
+      blockers: ["Blockers", "Open sub-task SHIP-55 and failed CI on PR #184 are listed explicitly."],
+      end: ["", ""]
+    };
+    document.body.dataset.scene = (scene === "title" || scene === "end") ? scene : "panel";
+    const highlights = { rec: "rec", decided: "decided", owners: "owners", blockers: "blockers" };
+    if (highlights[scene]) document.getElementById(highlights[scene]).classList.add("highlight");
+    const [label, line] = captions[scene] || captions.rec;
+    document.getElementById("cap-label").textContent = label;
+    document.getElementById("cap-line").textContent = line;
+  </script>
+</body>
+</html>

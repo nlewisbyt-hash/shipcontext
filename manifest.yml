@@ -1,0 +1,46 @@
+# ShipContext — Codegeist 2026 (Apps for Software Teams)
+#
+# Registered app id (Developer Space nlewisbyt). Do not change this id.
+# Do not bump the Forge app version or redeploy unless a real bug requires it.
+# Do not run `forge login` on this box; use FORGE_EMAIL and FORGE_API_TOKEN
+# from the environment. Do not start a paid plan or change Distribution.
+modules:
+  jira:issueContext:
+    - key: shipcontext-issue-context
+      resource: main
+      resolver:
+        function: resolver
+      render: native
+      title: ShipContext
+      description: A short ship-or-wait brief for software teams, built from this
+        issue's context.
+      label: ShipContext
+      icon: https://developer.atlassian.com/platform/forge/images/icons/issue-panel-icon.svg
+      dynamicProperties:
+        function: dynamic-properties
+  jira:issuePanel:
+    - key: shipcontext-issue-panel
+      resource: main
+      resolver:
+        function: resolver
+      render: native
+      title: ShipContext
+      icon: https://developer.atlassian.com/platform/forge/images/icons/issue-panel-icon.svg
+  function:
+    - key: resolver
+      handler: index.handler
+    - key: dynamic-properties
+      handler: index.dynamicProperties
+resources:
+  - key: main
+    path: src/frontend/index.jsx
+app:
+  runtime:
+    name: nodejs24.x
+    memoryMB: 256
+    architecture: arm64
+  id: ari:cloud:ecosystem::app/61606a28-83bc-474b-99d9-fd893a79d557
+permissions:
+  scopes:
+    - read:jira-work
+    - read:jira-user

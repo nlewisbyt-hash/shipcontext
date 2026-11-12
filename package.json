@@ -1,0 +1,22 @@
+{
+  "name": "shipcontext",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ShipContext: a Forge issue-context panel that tells software teams whether they can ship.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "preview": "node scripts/preview-context.js"
+  },
+  "dependencies": {
+    "@forge/api": "^8.5.0",
+    "@forge/bridge": "^7.3.0",
+    "@forge/react": "^12.5.0",
+    "@forge/resolver": "^2.0.2",
+    "react": "^18.3.1"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

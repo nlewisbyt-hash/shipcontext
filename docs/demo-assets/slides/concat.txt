@@ -1,0 +1,15 @@
+file '/workspace/competitions/codegeist-shipcontext/docs/demo-assets/slides/title-1280.png'
+duration 6
+file '/workspace/competitions/codegeist-shipcontext/docs/demo-assets/slides/problem-1280.png'
+duration 7
+file '/workspace/competitions/codegeist-shipcontext/docs/demo-assets/slides/rec-1280.png'
+duration 9
+file '/workspace/competitions/codegeist-shipcontext/docs/demo-assets/slides/decided-1280.png'
+duration 8
+file '/workspace/competitions/codegeist-shipcontext/docs/demo-assets/slides/owners-1280.png'
+duration 6
+file '/workspace/competitions/codegeist-shipcontext/docs/demo-assets/slides/blockers-1280.png'
+duration 9
+file '/workspace/competitions/codegeist-shipcontext/docs/demo-assets/slides/end-1280.png'
+duration 7
+file '/workspace/competitions/codegeist-shipcontext/docs/demo-assets/slides/end-1280.png'
