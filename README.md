@@ -10,7 +10,7 @@ This project is an entry in [Codegeist 2026](https://codegeist2026.devpost.com/)
 
 - Formally **Joined** on Devpost as `nlewisbyt` on 12 November 2026 (Asia/Shanghai).
 - **Not Submitted** to Devpost. Do not click Submit on Devpost until the owner agrees.
-- A public GitHub repository is being prepared. The tree is ready to push to an empty public repository under [`nlewisbyt-hash`](https://github.com/nlewisbyt-hash) once that URL is provided. Nothing has been pushed yet, and no remote is configured.
+- Public repository: [`nlewisbyt-hash/shipcontext`](https://github.com/nlewisbyt-hash/shipcontext).
 - Registered as a Forge app named **ShipContext** in Developer Space `nlewisbyt`. App id: `ari:cloud:ecosystem::app/61606a28-83bc-474b-99d9-fd893a79d557`.
 - Deployed to the Forge **development** and **production** environments (app version **2.1.0**, redeployed 12 November 2026 after a production resolver crash fix: `new Resolver()` failed because the ESM/webpack default import of `@forge/resolver` was not the class).
 - Installed on the official free Forge demo site [one-atlas-tdlu.atlassian.net](https://one-atlas-tdlu.atlassian.net) (Jira, both the development and production app environments). The CLI reported this demo site as **active** and due to expire on **2027-02-10**. Developer console installations: [ShipContext installations](https://developer.atlassian.com/console/myapps/61606a28-83bc-474b-99d9-fd893a79d557/monitoring/installations).
